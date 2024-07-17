@@ -1,8 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Selecting DOM elements
    const addButton = document.getElementById('add-task-btn');
     const taskInput = document.getElementById('task-input');
     const taskList = document.getElementById('task-list');
-
+// Function to add a new task
+    function addTask() {
+        // Retrieve and trim the task input value
+        const taskText = taskInput.value.trim();
     // Function to add a new task
     function addTask(taskText, save = true) {
         // Create new list item
