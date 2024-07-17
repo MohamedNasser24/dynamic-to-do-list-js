@@ -38,6 +38,14 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Please enter a task.');
         }
     }
+    // Function to update tasks array in local storage
+    function updateTasksArray() {
+        const tasks = [];
+        document.querySelectorAll('#task-list li').forEach(function(taskElement) {
+            tasks.push(taskElement.textContent.trim());
+        });
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
 // Function to load tasks from local storage
     function loadTasks() {
         const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
