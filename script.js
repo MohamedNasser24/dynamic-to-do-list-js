@@ -38,7 +38,11 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Please enter a task.');
         }
     }
-
+// Function to load tasks from local storage
+    function loadTasks() {
+        const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+        storedTasks.forEach(taskText => addTask(taskText, false)); // 'false' indicates not to save again to Local Storage
+    }
     // Event listeners
     addButton.addEventListener('click', addTask);
 
